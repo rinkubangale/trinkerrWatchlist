@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# TRINKERR INTERVIEW FRONTEND
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Background
 
-## Available Scripts
+If you are familiar to trading, you might have seen the watchlist feature. If not, then basically a watchlist is a place where you can see all your favourite stocks at one place and you can see the real time prices of it and execute the buy and sell actions on it.
 
-In the project directory, you can run:
+## Objective
 
-### `npm start`
+The objective of this assignment is to create a similar feature using the dummy data which will be provided to you.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Reference Images
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Create the watchlist structure as given in the below pic.
 
-### `npm test`
+`Pic-1`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Watchlist](./assets/watchlist.png)
 
-### `npm run build`
+`Pic-2`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Add_Delete](./assets/add_delete.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`Pic-3`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Search](./assets/search.png)
+## Tasks to be done
 
-### `npm run eject`
+1. On the Top of the Watchlist (see Pic-1 for reference), you can see a `Search Stocks` Options. You are given the data of the stocks in the `data.json` file in the repo. On Searching a stock, it should be drop down, where relevant search results are shown (see Pic-3 for reference).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Continuing with the First Task, on hovering the desired stock, A button should pop up (see Pic-3 for reference.). Instead of the 5 buttons, you just need to implement one button of Add.  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Continuing with the Second Task, on Clicking of Add button, the asset should be added to the watchlist. The asset should be displayed as shown in  pic-1. (For Reference, see data.json file). There are 3 fields for each asset. Example -
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- ```jsx
+  let data = [
+    "ASIANPAINT::NSE",
+    3143.65,
+    3144.3
+  ]
+  ```
+  The required fields to be shown in the watchlist will then be. ASIANPAINT, NSE, the current price which is `data[1]`, and the percentage change from yesterday which is
+  
+   `(data[1] - data[2]) / data[2])`
+4. Continuing with the Third Task, on hovering the asset in the watchlist, the user should get the option of deleting it from the watchlist. (see Pic-2 for reference) 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. Continuing with the Fourth Task, when a user is searching a stock, if the asset is already present, so instead of giving him the option of Add (Task-2) there should be a button of deletion.
 
-## Learn More
+6. The Final Task is to upload this project wherever you wish to do so. Be it S3, be it netlify, Heroku, Vercel wherever you feel like and provide the URL while submitting the final assignment. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Notes
+1. The assignment will be evaluated on the basis of the tasks completed.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Any Extra Feature will fetch a brownie points. For example, like if the current price is greater than yesterday price, then the stock should be in green. if `data[1] - data[2] > 0`, show stock in green else red.
 
-### Code Splitting
+3. The project structure also matters. So keep a note of it. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Tech Stack
+1. You need to implement the above using `React.Js` Library.
 
-### Analyzing the Bundle Size
+2. You are free to use any UI Library of your own choice.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Some Random Thoughts
+1. If you are new to trading, it might feel a bit overwhelming for the first time, but this is how you can challenge yourself. Just remember, even the best programmer in the world started from `Hello World`. You will learn a lot while doing this.
