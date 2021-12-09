@@ -1,7 +1,7 @@
 .container1{
     display: block;
     position: absolute;
-    background-color: #fff;
+    background-color: #efefef;
     width: 50%;
     max-height: 100vh;
     overflow: auto;
@@ -10,12 +10,13 @@
 .card{
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #dcdcdc;
+    background-color: #efefef;
     padding: 0 20px;
 }
 
 .profit {
-    color:#79ea86;
+    color:#09c51f;
 }
 
 .loss{
@@ -23,7 +24,7 @@
 }
 
 .card:hover{
-    background-color: #eee;
+    background-color: #dfdfdf;
 }
 
 .AddBtn {
