@@ -11,7 +11,6 @@ const StoreContextProvider = ({ children }) => {
   const removeStocks = (ele) => {
     let newList = watchlist.filter((el) => el !== ele);
     setWatchlist(newList);
-    console.log("hii");
   };
 
   const value = { watchlist, setWatchlist, handleStore, removeStocks };

@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
 import { StoreContext } from "../Context/Context";
-import TextField from "@mui/material/TextField";
 
 import data from "../data.json";
 import Styles from "./Search.module.css";
 
 export default function Search() {
-  const { handleStore } = useContext(StoreContext);
+  const { handleStore, removeStocks, watchlist } = useContext(StoreContext);
   const [query, setQuery] = useState("");
   const [res, setRes] = useState([]);
 
@@ -16,17 +15,26 @@ export default function Search() {
     let newData = data.filter((el) => el[0].includes(q.toUpperCase()));
     setRes(newData);
   };
-
-  // console.log(res.length);
   return (
     <div>
-      <TextField
-        fullWidth
-        placeholder="Search stocks..."
-        onChange={(e) => {
-          handleChange(e);
-        }}
-      />
+      <div width="100%" className={Styles.inputDiv}>
+        <input
+          type="text"
+          id="input"
+          placeholder="Search stocks..."
+          onChange={(e) => {
+            handleChange(e);
+          }}
+        />
+        <p
+          onClick={() => {
+            document.getElementById("input").value = null;
+            handleChange({ target: { value: "" } });
+          }}
+        >
+          +
+        </p>
+      </div>
 
       <div className={query.length > 2 ? Styles.container1 : Styles.container2}>
         {res &&
@@ -71,13 +79,17 @@ export default function Search() {
                 </div>
 
                 <div className={Styles.AddBtn}>
-                  <button
-                    onClick={() => {
-                      handleStore(el);
-                    }}
-                  >
-                    Add to Watchlist
-                  </button>
+                  {watchlist.includes(el) ? (
+                    <button onClick={() => removeStocks(el)}>Remove</button>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        handleStore(el);
+                      }}
+                    >
+                      Add
+                    </button>
+                  )}
                 </div>
               </div>
             );

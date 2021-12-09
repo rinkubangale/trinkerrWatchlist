@@ -3,7 +3,6 @@
     position: absolute;
     background-color: #fff;
     width: 50%;
-    /* min-height: fit-content; */
     max-height: 100vh;
     overflow: auto;
 }
@@ -46,11 +45,12 @@
     right: 25%;
     width: 115px;
     height: 115px;
-    /* border: 1px solid red; */
 }
 
 .AddBtn>button{
     font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
 }
 
 

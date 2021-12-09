@@ -1,3 +1,41 @@
+input {
+    border: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+    font-size: 16px;
+}
+input:focus{
+    outline: none;
+}
+input::placeholder {
+    color: #bbb;
+}
+
+.inputDiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-items: center;
+    border: 1px solid #bbb;
+    color: #ccc;
+    padding: 10px;
+    padding: 0px 14px;
+    border-radius: 4px;
+}
+.inputDiv:focus{
+    outline: 1.5px solid #77f;
+}
+.inputDiv>p{
+    margin : 0;
+    cursor: pointer;
+    font-size:45px;
+    color: #aaa;
+    font-family: sans-serif;
+    transform: rotate(45deg);
+}
+
 .container1{
     display: block;
     position: absolute;
@@ -60,6 +98,8 @@
 
 .AddBtn>button{
     font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
 }
 
 
