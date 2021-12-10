@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import { StoreContext } from "../Context/Context";
 
 import Styles from "./ListItem.module.css";
+import img from "../img.png";
 
 export default function ListItem() {
   const { removeStocks, watchlist } = useContext(StoreContext);
   return (
     <div className={Styles.container1}>
-      {watchlist &&
+      {watchlist.length ? (
         watchlist.map((el, i) => {
           return (
             <div key={i} className={Styles.card}>
@@ -52,7 +53,10 @@ export default function ListItem() {
               </div>
             </div>
           );
-        })}
+        })
+      ) : (
+          <img src={img} alt="Add Something to watchlist" className={ Styles.imgTag}/>
+      )}
     </div>
   );
 }
